@@ -1,2 +1,26 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+.button2 {
+  @apply relative bg-gradient-to-r from-[#fc99c5] via-[#fc6791] to-[#ff9911] rounded-2xl transition-all duration-300 px-9 py-2;
+}
+
+.button2::before {
+  @apply absolute inset-0 bg-white/15 rounded-2xl opacity-0 transition-opacity duration-300;
+  content: "";
+}
+
+.button2:hover::before {
+  @apply opacity-100;
+}
+.button2:active {
+  @apply bg-black/5;
+}
+
+.button2:active::before {
+  @apply bg-black/5 opacity-100;
+  box-shadow: inset 0 5px 4px rgba(0, 0, 0, 0.1); 
+}
