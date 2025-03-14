@@ -5,7 +5,15 @@
 @plugin "daisyui";
 
 .button2 {
-  @apply relative bg-gradient-to-r from-[#fc99c5] via-[#fc6791] to-[#ff9911] rounded-2xl transition-all duration-300 px-9 py-2;
+  @apply relative rounded-2xl transition-all duration-300 px-5 md:px-7 lg:px-9 py-2;
+  background: linear-gradient(
+    90deg,
+    #fc99c5 0%,
+    #fc6791 25%,
+    #fb4f4f 50%,
+    #ff6501 75%,
+    #f91 100%
+  );
 }
 
 .button2::before {
@@ -22,5 +30,5 @@
 
 .button2:active::before {
   @apply bg-black/5 opacity-100;
-  box-shadow: inset 0 5px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: inset 0 5px 4px rgba(0, 0, 0, 0.1);
 }
