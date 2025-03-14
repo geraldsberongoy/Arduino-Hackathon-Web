@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
-    <div className="relative min-h-screen w-full flex justify-end items-center bg-gradient-to-l from-[#fc99c5] via-[#fc6791] to-[#ff9911]">
+    <div className="relative min-h-screen w-full flex justify-end items-center " style={{background: "linear-gradient(58deg, #FC99C5 0%, #FC6791 12.62%, #FB4F4F 25.24%, #FF6501 37.85%, #F91 50.47%)"}}>
       <img
         src="/fire_bg.png"
         alt="Fire Bg"
-        className="absolute right-0 top-0 h-screen w-3/4 "
+        className="absolute right-0 top-0 h-screen w-full lg:w-11/12 xl:w-4/5"
       />
 
-      <div className="flex justify-end w-[630px] items-end flex-col gap-2.5 z-50 mr-20">
-        <div className="flex justify-between w-full">
+      <div className="flex justify-end w-1/2  md:w-[450px] lg:w-[540px] xl:w-[630px] items-end flex-col gap-2.5 z-50 mr-10 lg:mr-16">
+        <div className="flex flex-col-reverse sm:flex-row w-full justify-between">
           <div className="flex flex-col justify-end">
             <div
-              className="text-9xl font-normal font-['Bebas_Neue']"
+              className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal font-['Bebas_Neue']"
               style={{
                 background:
                   "linear-gradient(to top, #FC99C5, #FC6791 25%, #FB4F4F 50%, #FF6501 75%, #FF9911)",
@@ -25,22 +25,26 @@ const LandingPage = () => {
               ALERTECH
             </div>
 
-            <div className="justify-start text-[#30343f] text-[42px] font-normal font-['IBM_Plex_Sans']">
+            <div className="justify-start text-[#30343f] text-lg sm:text-2xl  md:text-3xl lg:text-[42px] font-normal font-['IBM_Plex_Sans']">
               TECHNOQUATRO
             </div>
           </div>
-          <img src="/logo.png" alt="ALERTECH LOGO" />
+          <img
+            src="/logo.png"
+            alt="ALERTECH LOGO"
+            className=" w-[100px] md:w-[140px] lg:w-auto"
+          />
         </div>
 
-        <div class=" text-[#30343f] text-xl font-normal font-['IBM_Plex_Sans']">
+        <div class=" text-[#30343f] text-xs sm:text-sm md:text-md lg:text-lg font-normal font-['IBM_Plex_Sans']">
           This project focuses on real-time fire and gas leak detection using
           ESP32 and Firebase. By integrating IoT sensors, a mobile app, and a
           web dashboard, we ensure instant alerts to users and fire stations,
           even triggering an automated call if necessary.
         </div>
-        <div className="flex w-full mt-5">
+        <div className="flex w-full mt-1 md:mt-3 lg:mt-5">
           <Link to="/dashboard">
-            <button className="button2 text-center justify-center text-white text-xl font-normal font-['IBM_Plex_Sans']">
+            <button className="button2 text-center justify-center text-white text-xs sm:text-sm md:text-md lg:text-lg font-normal font-['IBM_Plex_Sans']">
               Get Started
             </button>
           </Link>
