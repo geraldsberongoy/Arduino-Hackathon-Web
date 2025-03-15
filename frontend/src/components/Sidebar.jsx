@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Sidebar = ({ onSelect }) => {
   const [activeButton, setActiveButton] = useState("geolocation"); // Default to Geolocation
@@ -40,9 +40,8 @@ const Sidebar = ({ onSelect }) => {
       
       {/* Logout Button */}
       <button
-        onClick={() => {
-          alert("logout clicked");
-        }}
+        onClick={() => alert("logout clicked")}
+        className="py-2 px-4 text-base bg-red-600 hover:bg-red-500 rounded-lg transition mt-auto"
       >
         Logout
       </button>
