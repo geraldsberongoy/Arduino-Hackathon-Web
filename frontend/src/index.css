@@ -30,68 +30,54 @@
   box-shadow: inset 0 5px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Import Bebas Neue */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-/* Import Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
-/* Import IBM Plex Sans */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
-
 /* Typography */
 
 .header1 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   @apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl;
 }
 
 .header2 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   @apply text-8xl;
 }
 
 .title1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   @apply text-7xl;
 }
 
 .title2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   @apply text-5xl;
 }
 
 .title3 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   @apply text-lg sm:text-2xl  md:text-3xl lg:text-[42px];
 }
 
 .title4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   @apply text-3xl;
 }
 
 .text-xl {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   @apply text-xl;
 }
 
 .text-base {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   @apply text-base;
 }
 
 .text-sm {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   @apply text-sm;
 }
 
 .text-xs {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   @apply text-xs sm:text-sm md:text-base lg:text-lg;
 }
-
-
-
-
-
