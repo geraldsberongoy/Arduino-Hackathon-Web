@@ -1,6 +1,6 @@
-import DashboardPage from "./components/Dashboard";
+import DashboardPage from "./pages/DashboardPage";
 import { Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./pages/LandingPage";
 
 const App = () => {
   return (
