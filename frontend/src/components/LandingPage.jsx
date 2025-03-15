@@ -14,7 +14,7 @@ const LandingPage = () => {
         <div className="flex flex-col-reverse sm:flex-row w-full justify-between">
           <div className="flex flex-col justify-end">
             <div
-              className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal font-['Bebas_Neue']"
+              className="header1"
               style={{
                 background:
                   "linear-gradient(to top, #FC99C5, #FC6791 25%, #FB4F4F 50%, #FF6501 75%, #FF9911)",
@@ -25,7 +25,7 @@ const LandingPage = () => {
               ALERTECH
             </div>
 
-            <div className="justify-start text-[#30343f] text-lg sm:text-2xl  md:text-3xl lg:text-[42px] font-normal font-['IBM_Plex_Sans']">
+            <div className="justify-start text-[#30343f] title3">
               TECHNOQUATRO
             </div>
           </div>
@@ -36,7 +36,7 @@ const LandingPage = () => {
           />
         </div>
 
-        <div class=" text-[#30343f] text-xs sm:text-sm md:text-md lg:text-lg font-normal font-['IBM_Plex_Sans']">
+        <div class=" text-[#30343f] text-xs text-justify text font-normal font-['IBM_Plex_Sans']">
           This project focuses on real-time fire and gas leak detection using
           ESP32 and Firebase. By integrating IoT sensors, a mobile app, and a
           web dashboard, we ensure instant alerts to users and fire stations,
@@ -44,7 +44,7 @@ const LandingPage = () => {
         </div>
         <div className="flex w-full mt-1 md:mt-3 lg:mt-5">
           <Link to="/dashboard">
-            <button className="button2 text-center justify-center text-white text-xs sm:text-sm md:text-md lg:text-lg font-normal font-['IBM_Plex_Sans']">
+            <button className="button2 text-center cursor-pointer justify-center text-white text-xs">
               Get Started
             </button>
           </Link>
