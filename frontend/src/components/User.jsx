@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "./ui/Table";
 import SearchBar from "./ui/Search";
-import { SlidersHorizontal, Search } from "lucide-react";
+import users from "../data/users.json";
 
 const User = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -82,7 +82,7 @@ const User = () => {
         </div>
       </div>
 
-      <Table searchQuery={searchQuery} />
+      <Table users={users} searchQuery={searchQuery} />
     </div>
   );
 };
