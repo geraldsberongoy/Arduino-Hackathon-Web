@@ -23,7 +23,7 @@ const DashboardPage = () => {
   return (
     <div className="min-h-screen w-full flex">
       <Sidebar onSelect={setSelectedComponent} />
-      <div className="flex-grow flex justify-center items-center">
+      <div className="flex-grow flex justify-center items-center bg-[#ffd9da]">
         {renderContent()}
       </div>
     </div>
