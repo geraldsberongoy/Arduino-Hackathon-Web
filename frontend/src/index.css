@@ -81,3 +81,8 @@
   font-family: "IBM Plex Sans", sans-serif;
   @apply text-xs sm:text-sm md:text-base lg:text-lg;
 }
+
+.tooltip {
+  --tt-bg: rgb(116, 8, 8);
+  
+}
