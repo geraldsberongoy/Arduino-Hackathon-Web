@@ -17,6 +17,11 @@ const Sidebar = ({ onSelect, className = "" }) => {
 
   return (
     <>
+      {/* Import Bebas Neue font */}
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+      `}</style>
+      
       {/* Sidebar Container */}
       <div 
         className={`flex flex-col h-screen text-white bg-[#FB4F4F] p-5 transition-all duration-300 ${
@@ -27,12 +32,17 @@ const Sidebar = ({ onSelect, className = "" }) => {
         <div className="flex flex-col w-full h-full justify-between gap-20">
           
           {/* Hamburger-menu and Logo Container */}
-          <div className="flex flex-col items-center gap-4 pb-5 border-b">
+          <div className="flex flex-col items-center gap-4 py-5 border-b">
             <button 
               onClick={toggleCollapse} 
-              className="self-end hover:bg-white/10 p-2 rounded-full transition"
+              className="self-end hover:bg-white/10 p-2 rounded-full transition relative h-10 w-10 flex items-center justify-center"
             >
-              {isCollapsed ? <Menu size={24} /> : <X size={24} />}
+              <div className={`absolute transition-all duration-300 ${isCollapsed ? "opacity-100 rotate-0" : "opacity-0 rotate-90"}`}>
+                <Menu size={24} />
+              </div>
+              <div className={`absolute transition-all duration-300 ${isCollapsed ? "opacity-0 -rotate-90" : "opacity-100 rotate-0"}`}>
+                <X size={24} />
+              </div>
             </button>
             
             <div className="flex flex-col items-center gap-2">
@@ -41,7 +51,12 @@ const Sidebar = ({ onSelect, className = "" }) => {
                 alt="Dashboard Icon" 
                 className={`transition-all duration-300 ${isCollapsed ? "size-8" : "size-20"}`} 
               />
-              <h1 className={`title4 ${isCollapsed ? "hidden" : "block"}`}>ALERTECH</h1>
+              <h1 
+                className={`title4 ${isCollapsed ? "hidden" : "block"}`}
+                style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "1px", fontSize: "48px" }}
+              >
+                ALERTECH
+              </h1>
             </div>
           </div>
 
@@ -70,7 +85,7 @@ const Sidebar = ({ onSelect, className = "" }) => {
           </div>
           
           {/* Logout Button at the Bottom */}
-          <div className="w-full border-t pt-5"> 
+          <div className="w-full border-t p-5"> 
             <button
               onClick={() => alert("Logout clicked")}
               className={`py-4 w-full flex ${isCollapsed ? "justify-center" : "items-center"} hover:bg-red-500 transition`}
