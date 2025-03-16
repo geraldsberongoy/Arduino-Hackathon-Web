@@ -2,8 +2,11 @@ import React from "react";
 
 const Table = ({ users, searchQuery, filter }) => {
   const filteredUsers = users.filter((user) => {
-    const matchesSearchQuery = user.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesFilter = filter === "all" || user.status.toLowerCase() === filter;
+    const matchesSearchQuery = user.name
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    const matchesFilter =
+      filter === "all" || user.status.toLowerCase() === filter;
     return matchesSearchQuery && matchesFilter;
   });
 
@@ -44,7 +47,9 @@ const Table = ({ users, searchQuery, filter }) => {
             filteredUsers.map((user, index) => (
               <tr
                 key={index}
-                className={`${getStatusColor(user.status)} outline-1`}
+                className={`${getStatusColor(
+                  user.status
+                )} outline-1 cursor-pointer hover:bg-gray-200/80`}
               >
                 <td>
                   <div className="flex items-center gap-3">
