@@ -1,56 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
+import LogPanel from "./LogPanel";
+import ConsolePanel from "./ConsolePanel";
+import DatabasePanel from "./DatabasePanel";
 
-const tabs = ["Logs", "Console", "Database"]; // Moved outside for better readability
+const tabs = ["Logs", "Console", "Database"];
 
 const Logs = () => {
+  const [activeTab, setActiveTab] = useState("Logs");
+
+  const getActivePanel = () => {
+    const panels = {
+      "Logs": <LogPanel />,
+      "Console": <ConsolePanel />,
+      "Database": <DatabasePanel />
+    };
+    
+    return panels[activeTab] || <h1>Content Coming Soon</h1>;
+  };
+
   return (
-    <>
-      {/* Logs Page Container */}
-      <div className="w-full h-screen bg-white p-10">
+    <div className="w-full h-screen bg-white p-10">
+      <div className="w-full h-full flex flex-col gap-10">
+        {/* Header */}
+        <div className="flex flex-col gap-2">
+          <h1 className="text-5xl font-bold font-['IBM_Plex_Sans'] text-[#30343f]">Logs</h1>
+          <p className="text-[#fc6791] text-base font-normal font-['IBM_Plex_Sans']">
+            Monitor user fire statuses and details
+          </p>
+        </div>
 
-        {/* Logs Panel */}
-        <div className="w-full h-full flex flex-col gap-10">
-
-          {/* Page Header */}
-          <div className="flex flex-col gap-2">
-            <h1 className="text-5xl font-bold font-['IBM_Plex_Sans'] text-[#30343f]">Logs</h1>
-            <p className="justify-start text-[#fc6791] text-base font-normal font-['IBM_Plex_Sans']">
-              Monitor user fire statuses and details
-            </p>
+        {/* Dashboard */}
+        <div className="flex flex-col w-full flex-grow gap-2">
+          {/* Tabs */}
+          <div className="flex flex-row gap-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-2 text-lg font-semibold rounded-full w-40 cursor-pointer
+                  transition-all duration-200 ${
+                    activeTab === tab
+                      ? "bg-gradient-to-r from-[#FC99C5] via-[#FF6501] to-[#F91] text-white shadow-[inset_0_5px_7px_1px_rgba(0,0,0,0.25)]"
+                      : "text-transparent bg-clip-text bg-gradient-to-r from-[#FC99C5] via-[#FF6501] to-[#F91] border-2 border-[#FC99C5]"
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
 
-          {/* Logs Dashboard */}
-          <div className="flex flex-col w-full flex-grow gap-2">
-
-            {/* Navigation Tabs */}
-            <div className="flex flex-row gap-4">
-                {tabs.map((tab, index) => (
-                <button 
-                key={index} 
-                className="relative px-6 py-2 text-lg font-semibold rounded-full overflow-hidden cursor-pointer w-40"
-                >
-
-                  {/* Gradient Border */}
-                  <span className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-[#FC99C5] via-[#FF6501] to-[#F91] p-[0.1px]">
-                    <span className="block h-full w-full rounded-full bg-white"></span>
-                  </span>
-
-                  {/* Gradient Text */}
-                  <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#FC99C5] via-[#FF6501] to-[#F91]">
-                    {tab}
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            {/* Active Content Area */}
-            <div className="bg-[#FFD9DA] flex justify-center items-center w-full flex-grow drop-shadow-[0_7px_5px_rgba(0,0,0,0.25)] rounded-xl">
-              <h1>Hello, World!</h1>
-            </div>
+          {/* Content Area */}
+          <div className="bg-[#FFD9DA] flex justify-center items-center w-full flex-grow drop-shadow-[0_7px_5px_rgba(0,0,0,0.25)] rounded-xl p-5">
+            {getActivePanel()}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
