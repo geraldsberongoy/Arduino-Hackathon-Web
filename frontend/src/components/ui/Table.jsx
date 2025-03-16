@@ -1,9 +1,11 @@
 import React from "react";
 
-const Table = ({ users, searchQuery }) => {
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+const Table = ({ users, searchQuery, filter }) => {
+  const filteredUsers = users.filter((user) => {
+    const matchesSearchQuery = user.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesFilter = filter === "all" || user.status.toLowerCase() === filter;
+    return matchesSearchQuery && matchesFilter;
+  });
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {

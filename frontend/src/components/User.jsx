@@ -1,25 +1,33 @@
 import React, { useState } from "react";
 import Table from "./ui/Table";
 import SearchBar from "./ui/Search";
-import users from "../data/users.json";  // Sample data
+import FilterDropdown from "./ui/FilterDropdown";
+import users from "../data/users.json"; // Sample data
 
 const User = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [filter, setFilter] = useState("all");
 
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
 
   const countSafeUsers = () => {
-    return users.filter(user => user.status.toLowerCase() === "safe").length;
+    return users.filter((user) => user.status.toLowerCase() === "safe").length;
   };
 
   const countWarningUsers = () => {
-    return users.filter(user => user.status.toLowerCase() === "warning").length;
+    return users.filter((user) => user.status.toLowerCase() === "warning")
+      .length;
   };
 
   const countCriticalUsers = () => {
-    return users.filter(user => user.status.toLowerCase() === "critical").length;
+    return users.filter((user) => user.status.toLowerCase() === "critical")
+      .length;
+  };
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
   };
 
   return (
@@ -80,21 +88,10 @@ const User = () => {
 
       <div className="w-full flex items-center justify-between pt-10 pb-2">
         <SearchBar onSearch={handleSearch} />
-
-        <div className="w-[180px] h-10 px-5 bg-white rounded-[50px] outline outline-offset-[-1px] outline-[#7a7a7a] inline-flex justify-start items-center gap-[3px] overflow-hidden">
-          <select className="w-full h-full bg-transparent text-[#7a7a7a] text-base font-normal font-['IBM_Plex_Sans'] outline-none">
-            <option value="default" disabled selected>
-              Filter by Status
-            </option>
-            <option value="location">Location</option>
-            <option value="temperature">Temperature</option>
-            <option value="status">Status</option>
-            <option value="lastUpdate">Last Update</option>
-          </select>
-        </div>
+        <FilterDropdown onChange={handleFilterChange} />
       </div>
 
-      <Table users={users} searchQuery={searchQuery} />
+      <Table users={users} searchQuery={searchQuery} filter={filter} />
     </div>
   );
 };
