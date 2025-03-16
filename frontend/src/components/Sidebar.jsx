@@ -17,7 +17,7 @@ const Sidebar = ({ onSelect, className = "" }) => {
 {!isOpen && ( 
   <button 
     onClick={() => setIsOpen(true)} 
-    className="md:hidden fixed bottom-4 left-4 z-[1000] bg-[#FB4F4F] p-2 rounded text-white"
+    className="md:hidden fixed top-4 left-4 z-[1000] bg-[#FB4F4F] p-2 rounded text-white"
   >
     <Menu size={28} />
   </button>
