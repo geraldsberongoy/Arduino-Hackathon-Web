@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import Table from "./ui/Table";
 import SearchBar from "./ui/Search";
-import users from "../data/users.json";
+import users from "../data/users.json";  // Sample data
 
 const User = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (query) => {
     setSearchQuery(query);
+  };
+
+  const countSafeUsers = () => {
+    return users.filter(user => user.status.toLowerCase() === "safe").length;
+  };
+
+  const countWarningUsers = () => {
+    return users.filter(user => user.status.toLowerCase() === "warning").length;
+  };
+
+  const countCriticalUsers = () => {
+    return users.filter(user => user.status.toLowerCase() === "critical").length;
   };
 
   return (
@@ -28,7 +40,7 @@ const User = () => {
             <span className="text-white text-lg font-bold font-['IBM_Plex_Sans']">
               Total Safe Users
             </span>
-            <p>X</p>
+            <p>{countSafeUsers()}</p>
           </div>
         </div>
 
@@ -40,7 +52,7 @@ const User = () => {
             <span className="text-white text-lg font-bold font-['IBM_Plex_Sans']">
               Total Warning Users
             </span>
-            <p>Y</p>
+            <p>{countWarningUsers()}</p>
           </div>
         </div>
 
@@ -52,7 +64,7 @@ const User = () => {
             <span className="text-white text-lg font-bold font-['IBM_Plex_Sans']">
               Total Critical Users
             </span>
-            <p>Z</p>
+            <p>{countCriticalUsers()}</p>
           </div>
         </div>
 
