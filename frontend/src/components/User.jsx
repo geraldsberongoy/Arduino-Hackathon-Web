@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "./ui/Table";
 import SearchBar from "./ui/Search";
 import { SlidersHorizontal, Search } from "lucide-react";
 
 const User = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const handleSearch = (query) => {
-    console.log("Search query:", query);
-    // Implement your search logic here
+    setSearchQuery(query);
   };
 
   return (
@@ -81,7 +82,7 @@ const User = () => {
         </div>
       </div>
 
-      <Table />
+      <Table searchQuery={searchQuery} />
     </div>
   );
 };

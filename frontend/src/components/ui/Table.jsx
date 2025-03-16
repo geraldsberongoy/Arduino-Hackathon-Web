@@ -67,7 +67,11 @@ const users = [
   },
 ];
 
-const Table = () => {
+const Table = ({ searchQuery }) => {
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
       case "safe":
@@ -95,29 +99,37 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
-            <tr
-              key={index}
-              className={`${getStatusColor(user.status)} outline-1`}
-            >
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img src={user.avatar} alt={`Avatar of ${user.name}`} />
+          {filteredUsers.length === 0 ? (
+            <tr>
+              <td colSpan="5" className="text-center">
+                No users found
+              </td>
+            </tr>
+          ) : (
+            filteredUsers.map((user, index) => (
+              <tr
+                key={index}
+                className={`${getStatusColor(user.status)} outline-1`}
+              >
+                <td>
+                  <div className="flex items-center gap-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12">
+                        <img src={user.avatar} alt={`Avatar of ${user.name}`} />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-bold">{user.name}</div>
                     </div>
                   </div>
-                  <div>
-                    <div className="font-bold">{user.name}</div>
-                  </div>
-                </div>
-              </td>
-              <td>{user.location}</td>
-              <td>{user.temperatureLevel}</td>
-              <td>{user.status}</td>
-              <td>{user.lastUpdate}</td>
-            </tr>
-          ))}
+                </td>
+                <td>{user.location}</td>
+                <td>{user.temperatureLevel}</td>
+                <td>{user.status}</td>
+                <td>{user.lastUpdate}</td>
+              </tr>
+            ))
+          )}
         </tbody>
         {/* foot */}
         <tfoot></tfoot>
