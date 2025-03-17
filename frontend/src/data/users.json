@@ -1,82 +1,19 @@
 [
   {
-    "name": "Shai Frederick Base",
-    "location": "Pasig, Philippines",
-    "temperatureLevel": "Normal",
-    "status": "Safe",
+    "name": "David Bato-bato",
+    "address": "J383+HJ3, P. Tuazon Blvd, Cubao, Quezon City, Metro Manila",
+    "location": "Cubao, Quezon City",
+    "contactNumber": "09944345742",
+    "temperature": 30,
+    "validation": 1,
+    "status": "critical",
+    "firestationUUID": "/firestation/sti-cubao",
+    "avatar": "https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/428633960_2238029566403548_1974654326928901056_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHlqgV3JdUIQFPyWCxnmJQeU5OhW6j-y_1Tk6FbqP7L_TeWG96BmxMTCVkTuKAzBe4IBQy7exTOU8aLbBccL3dq&_nc_ohc=t3KV4qyrcT8Q7kNvgEQRb4S&_nc_oc=AdjoKFTjsCPNmHNWTG21RDfHmzsCH-CVoPWNRn_jpwvXRkvUc6AaQLeo0b5Dm9ltChg&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&_nc_gid=LiOgo7CTq8sPZAxCOZyKJw&oh=00_AYEl5shBGN0OaW9__g_WJjEZtaS6lUF-ZyyvxaE1cHu9Kw&oe=67DDFCF8",
+    "geolocation": {
+      "latitude": 14.616541319292265,
+      "longitude": 121.05401924471525
+    },
     "lastUpdate": "2025-03-15",
-    "avatar": "https://scontent.fmnl30-3.fna.fbcdn.net/v/t39.30808-6/483763164_1584856472917188_6795797200787845427_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHCBXtyoVJrYKqRLF8yA2MTvclsSBqN2CK9yWxIGo3YIr4nldADbsjVytD8BCDGfQtB2Taz3DBFb3FKWeJ0DlJ0&_nc_ohc=FM2BQtL297MQ7kNvgEnFN1q&_nc_oc=AdieDl82HPPr_EBSKRjjVFhpfqrcAchazTUyvuvbmLv2L9Ki6uoUmsItIqedB3tzAO0&_nc_zt=23&_nc_ht=scontent.fmnl30-3.fna&_nc_gid=6ZV9RGfPBTHnbu5kI_t5KQ&oh=00_AYH5IbDaWN_MXlkoL5TTp_Dm1DAufsSwLs_FNfDuG2Wtbw&oe=67DC97D0",
-    "longitude": 121.0874030,
-    "latitude": 14.6081418
-  },
-  {
-    "name": "Brice Swyre",
-    "location": "China",
-    "temperatureLevel": "High",
-    "status": "Warning",
-    "lastUpdate": "2025-03-14",
-    "avatar": "https://img.daisyui.com/images/profile/demo/3@94.webp",
-    "longitude": 37.6176,
-    "latitude": 55.7558
-  },
-  {
-    "name": "James Mikko Recario",
-    "location": "Russia",
-    "temperatureLevel": "Low",
-    "status": "Safe",
-    "lastUpdate": "2025-03-13",
-    "avatar": "https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/431996746_2670930956414286_5959601684898707509_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFct-PqURmpWb5KUuc2JKFbmgcVAseIpiOaBxUCx4imIxiNZFNkJs6A_azr5CyK-xmsSyZP7KeFbiCxBS2LKfuG&_nc_ohc=2gQ7xJVKiXAQ7kNvgHrzTRx&_nc_oc=AdiFH2KRZqlUGr4VVX-tyltr0x8u2tbjdYaCfZkTMkR2y_M3xIR5tgQKYgNbZBKiGFw&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&_nc_gid=pnFlqh98eSK7EY4E-Kdgxw&oh=00_AYEFw9TWFOleKxmbHOltBI5rClggofOgEnuEhsddt9M-ww&oe=67DCC1BE",
-    "longitude": 37.6176,
-    "latitude": 55.7558
-  },
-  {
-    "name": "Yancy Tear",
-    "location": "Brazil",
-    "temperatureLevel": "Normal",
-    "status": "Critical",
-    "lastUpdate": "2025-03-12",
-    "avatar": "https://img.daisyui.com/images/profile/demo/5@94.webp",
-    "longitude": 37.6176,
-    "latitude": 55.7558
-  },
-  {
-    "name": "Hart Hagerty",
-    "location": "United States",
-    "temperatureLevel": "Normal",
-    "status": "Safe",
-    "lastUpdate": "2025-03-15",
-    "avatar": "https://img.daisyui.com/images/profile/demo/2@94.webp",
-    "longitude": 37.6176,
-    "latitude": 55.7558
-  },
-  {
-    "name": "Brice Swyre",
-    "location": "China",
-    "temperatureLevel": "High",
-    "status": "Warning",
-    "lastUpdate": "2025-03-14",
-    "avatar": "https://img.daisyui.com/images/profile/demo/3@94.webp",
-    "longitude": 37.6176,
-    "latitude": 55.7558
-  },
-  {
-    "name": "Marjy Ferencz",
-    "location": "Russia",
-    "temperatureLevel": "Low",
-    "status": "Safe",
-    "lastUpdate": "2025-03-13",
-    "avatar": "https://img.daisyui.com/images/profile/demo/4@94.webp",
-    "longitude": 37.6176,
-    "latitude": 55.7558
-  },
-  {
-    "name": "Yancy Tear",
-    "location": "Brazil",
-    "temperatureLevel": "Normal",
-    "status": "Critical",
-    "lastUpdate": "2025-03-12",
-    "avatar": "https://img.daisyui.com/images/profile/demo/5@94.webp",
-    "longitude": 37.6176,
-    "latitude": 55.7558
+    "id": 1
   }
 ]
