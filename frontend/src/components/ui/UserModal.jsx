@@ -1,107 +1,126 @@
-import React, { useState } from "react";
-import UserModal from "./UserModal";
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
-const Table = ({ users, searchQuery, filter, sortBy }) => {
-  const [selectedUser, setSelectedUser] = useState(null);
+// Fix for default marker icon issue
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+});
 
-  const filteredUsers = users
-    .filter((user) => {
-      const matchesSearchQuery = user.name
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase());
-      const matchesFilter =
-        filter === "all" || user.status.toLowerCase() === filter;
-      return matchesSearchQuery && matchesFilter;
-    })
-    .sort((a, b) => {
-      if (!sortBy) return 0;
-      if (sortBy === "lastUpdate") {
-        return new Date(b.lastUpdate) - new Date(a.lastUpdate);
-      }
-      if (a[sortBy] < b[sortBy]) return -1;
-      if (a[sortBy] > b[sortBy]) return 1;
-      return 0;
-    });
+// Custom icons
+const safeIcon = new L.Icon({
+  iconUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
-  const getStatusColor = (status) => {
-    switch (status.toLowerCase()) {
-      case "safe":
-        return "bg-[#33bc85]/50 ";
-      case "warning":
-        return "bg-[#ff9911]/50";
-      case "critical":
-        return "bg-[#fb4f4f]/50";
-      default:
-        return "";
-    }
-  };
+const warningIcon = new L.Icon({
+  iconUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png",
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
-  const handleRowClick = (user) => {
-    setSelectedUser(user);
-  };
+const criticalIcon = new L.Icon({
+  iconUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
-  const handleCloseModal = () => {
-    setSelectedUser(null);
-  };
+const getStatusIcon = (status) => {
+  switch (status.toLowerCase()) {
+    case "safe":
+      return safeIcon;
+    case "warning":
+      return warningIcon;
+    case "critical":
+      return criticalIcon;
+    default:
+      return L.Icon.Default;
+  }
+};
 
+const UserModal = ({ user, onClose }) => {
   return (
-    <div className="relative flex-1 w-full overflow-x-auto border rounded-2xl border-base-300 text-black bg-white/60">
-      <table className="table">
-        {/* head */}
-        <thead>
-          <tr className="bg-white text-black">
-            <th>Name</th>
-            <th>Location</th>
-            <th>Temperature Level</th>
-            <th>Status</th>
-            <th>Last Update</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.length === 0 ? (
-            <tr>
-              <td colSpan="5" className="text-center">
-                No users found
-              </td>
-            </tr>
-          ) : (
-            filteredUsers.map((user, index) => (
-              <tr
-                key={index}
-                className={`${getStatusColor(
-                  user.status
-                )} outline-1 cursor-pointer hover:bg-gray-200/80`}
-                onClick={() => handleRowClick(user)}
-              >
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle h-12 w-12">
-                        <img src={user.avatar} alt={`Avatar of ${user.name}`} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{user.name}</div>
-                    </div>
-                  </div>
-                </td>
-                <td>{user.location}</td>
-                <td>{user.temperatureLevel}</td>
-                <td>{user.status}</td>
-                <td>{user.lastUpdate}</td>
-              </tr>
-            ))
-          )}
-        </tbody>
-        {/* foot */}
-        <tfoot></tfoot>
-      </table>
-
-      {selectedUser && (
-        <UserModal user={selectedUser} onClose={handleCloseModal} />
-      )}
+    <div className="fixed inset-0 bg-black/80 bg-opacity-20 flex justify-center items-center z-10">
+      <div className="bg-white py-8 px-12 rounded-2xl shadow-2xl relative w-2/3 flex">
+        <div className="w-1/2 flex flex-col items-center">
+          <button
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            onClick={onClose}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <img
+            src={user.avatar}
+            alt={`Avatar of ${user.name}`}
+            className="mask mask-squircle h-32 w-32 mb-6 border-4 border-primary"
+          />
+          <h2 className="text-3xl font-bold mb-4 text-primary">{user.name}</h2>
+          <p className="text-lg mb-2 text-secondary">
+            Location: {user.location}
+          </p>
+          <p className="text-lg mb-2 text-secondary">
+            Temperature Level: {user.temperatureLevel}
+          </p>
+          <p className="text-lg mb-2 text-secondary">Status: {user.status}</p>
+          <p className="text-lg text-secondary">
+            Last Update: {user.lastUpdate}
+          </p>
+        </div>
+        <div className="w-1/2">
+          <MapContainer
+            center={[user.latitude, user.longitude]}
+            zoom={13}
+            style={{ height: "100%", width: "100%" }}
+          >
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker
+              position={[user.latitude, user.longitude]}
+              icon={getStatusIcon(user.status)}
+            >
+              <Popup>{user.name}'s location</Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Table;
+export default UserModal;
