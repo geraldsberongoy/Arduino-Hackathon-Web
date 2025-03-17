@@ -3,9 +3,8 @@ import Table from "./ui/Table";
 import SearchBar from "./ui/Search";
 import FilterDropdown from "./ui/FilterDropdown";
 import SortDropdown from "./ui/SortDropdown";
-import users from "../data/users.json"; // Sample data
 
-const User = () => {
+const User = ({ users }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("");

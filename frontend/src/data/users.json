@@ -6,7 +6,7 @@
     "contactNumber": "09944345742",
     "temperature": 30,
     "validation": 1,
-    "status": "Warning",
+    "status": "critical",
     "firestationUUID": "/firestation/sti-cubao",
     "avatar": "https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/428633960_2238029566403548_1974654326928901056_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHlqgV3JdUIQFPyWCxnmJQeU5OhW6j-y_1Tk6FbqP7L_TeWG96BmxMTCVkTuKAzBe4IBQy7exTOU8aLbBccL3dq&_nc_ohc=t3KV4qyrcT8Q7kNvgEQRb4S&_nc_oc=AdjoKFTjsCPNmHNWTG21RDfHmzsCH-CVoPWNRn_jpwvXRkvUc6AaQLeo0b5Dm9ltChg&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&_nc_gid=LiOgo7CTq8sPZAxCOZyKJw&oh=00_AYEl5shBGN0OaW9__g_WJjEZtaS6lUF-ZyyvxaE1cHu9Kw&oe=67DDFCF8",
     "geolocation": {

@@ -7,10 +7,10 @@ import {
   ZoomControl,
 } from "react-leaflet";
 import StaticCard from "./ui/StaticCard";
+import AlertModal from "./ui/AlertModal";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { getStatusIcon } from "../utils/iconUtils";
-import users from "../data/users.json"; // Sample data
 
 // Fix for default marker icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -21,7 +21,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 });
 
-const Geolocation = () => {
+const Geolocation = ({ users }) => {
   return (
     <div className="relative w-full h-screen flex ">
       <div className="absolute top-2 right-4 z-10">
