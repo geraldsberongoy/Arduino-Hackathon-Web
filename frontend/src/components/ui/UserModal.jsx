@@ -35,7 +35,7 @@ const UserModal = ({ user, onClose }) => {
             Location: {user.location}
           </p>
           <p className="text-lg mb-2 text-secondary">
-            Temperature Level: {user.temperatureLevel}
+            Temperature Level: {user.temperature}°C
           </p>
           <p className="text-lg mb-2 text-secondary">Status: {user.status}</p>
           <p className="text-lg text-secondary">
@@ -44,7 +44,7 @@ const UserModal = ({ user, onClose }) => {
         </div>
         <div className="w-1/2">
           <MapContainer
-            center={[user.latitude, user.longitude]}
+            center={[user.geolocation.latitude, user.geolocation.longitude]}
             zoom={100}
             style={{ height: "100%", width: "100%" }}
           >
@@ -53,7 +53,7 @@ const UserModal = ({ user, onClose }) => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
             <Marker
-              position={[user.latitude, user.longitude]}
+              position={[user.geolocation.latitude, user.geolocation.longitude]}
               icon={getStatusIcon(user.status)}
             >
               <Popup>{user.name}'s location</Popup>

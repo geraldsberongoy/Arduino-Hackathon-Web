@@ -86,7 +86,7 @@ const Table = ({ users, searchQuery, filter, sortBy }) => {
                   </div>
                 </td>
                 <td>{user.location}</td>
-                <td>{user.temperatureLevel}</td>
+                <td>{user.temperature}°C</td>
                 <td>{user.status}</td>
                 <td>{user.lastUpdate}</td>
               </tr>

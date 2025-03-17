@@ -41,7 +41,7 @@ const Geolocation = () => {
         {users.map((user) => (
           <Marker
             key={user.id}
-            position={[user.latitude, user.longitude]}
+            position={[user.geolocation.latitude, user.geolocation.longitude]}
             icon={getStatusIcon(user.status)}
           >
             <Popup className="">
