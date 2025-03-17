@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Table from "./ui/Table";
 import SearchBar from "./ui/Search";
 import FilterDropdown from "./ui/FilterDropdown";
+import SortDropdown from "./ui/SortDropdown";
 import users from "../data/users.json"; // Sample data
 
 const User = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
+  const [sortBy, setSortBy] = useState("");
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -28,6 +30,10 @@ const User = () => {
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
+  };
+
+  const handleSortChange = (sortOption) => {
+    setSortBy(sortOption);
   };
 
   return (
@@ -88,10 +94,18 @@ const User = () => {
 
       <div className="w-full flex items-center justify-between pt-10 pb-2">
         <SearchBar onSearch={handleSearch} />
-        <FilterDropdown onChange={handleFilterChange} />
+        <div className="flex gap-2">
+          <FilterDropdown onChange={handleFilterChange} />
+          <SortDropdown onChange={handleSortChange} />
+        </div>
       </div>
 
-      <Table users={users} searchQuery={searchQuery} filter={filter} />
+      <Table
+        users={users}
+        searchQuery={searchQuery}
+        filter={filter}
+        sortBy={sortBy}
+      />
     </div>
   );
 };

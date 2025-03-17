@@ -12,17 +12,27 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 });
 
-const Table = ({ users, searchQuery, filter }) => {
+const Table = ({ users, searchQuery, filter, sortBy }) => {
   const [selectedUser, setSelectedUser] = useState(null);
 
-  const filteredUsers = users.filter((user) => {
-    const matchesSearchQuery = user.name
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
-    const matchesFilter =
-      filter === "all" || user.status.toLowerCase() === filter;
-    return matchesSearchQuery && matchesFilter;
-  });
+  const filteredUsers = users
+    .filter((user) => {
+      const matchesSearchQuery = user.name
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const matchesFilter =
+        filter === "all" || user.status.toLowerCase() === filter;
+      return matchesSearchQuery && matchesFilter;
+    })
+    .sort((a, b) => {
+      if (!sortBy) return 0;
+      if (sortBy === "lastUpdate") {
+        return new Date(b.lastUpdate) - new Date(a.lastUpdate);
+      }
+      if (a[sortBy] < b[sortBy]) return -1;
+      if (a[sortBy] > b[sortBy]) return 1;
+      return 0;
+    });
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
