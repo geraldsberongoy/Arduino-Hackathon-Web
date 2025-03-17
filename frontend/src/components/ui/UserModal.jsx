@@ -45,7 +45,7 @@ const UserModal = ({ user, onClose }) => {
         <div className="w-1/2">
           <MapContainer
             center={[user.latitude, user.longitude]}
-            zoom={13}
+            zoom={100}
             style={{ height: "100%", width: "100%" }}
           >
             <TileLayer
