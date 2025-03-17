@@ -1,0 +1,182 @@
+[
+  {
+    "timestamp": "2025-03-17T08:23:14Z",
+    "eventType": "High Temp Warning",
+    "location": "43.7128°N, 79.3452°W",
+    "sensor": {"temp": 89.6, "RH": 42, "smoke": "none"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-015",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T14:07:32Z",
+    "eventType": "Fire Alert",
+    "location": "51.5074°N, 0.1278°W",
+    "sensor": {"temp": 118.2, "RH": 18, "smoke": "high"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-003",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T09:42:19Z",
+    "eventType": "System Restarted",
+    "location": "40.7128°N, 74.0060°W",
+    "sensor": {"temp": 72.3, "RH": 55, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-008",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T22:51:03Z",
+    "eventType": "Geolocation Update",
+    "location": "34.0522°N, 118.2437°W",
+    "sensor": {"temp": 75.8, "RH": 38, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-001",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T11:19:47Z",
+    "eventType": "High Temp Warning",
+    "location": "52.5200°N, 13.4050°E",
+    "sensor": {"temp": 94.1, "RH": 27, "smoke": "none"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-019",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T16:33:26Z",
+    "eventType": "Malfunction",
+    "location": "48.8566°N, 2.3522°E",
+    "sensor": {"temp": null, "RH": null, "smoke": null},
+    "action": "Maintenance Alert",
+    "deviceId": "alarm-012",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T05:14:58Z",
+    "eventType": "Fire Alert",
+    "location": "41.8781°N, 87.6298°W",
+    "sensor": {"temp": 127.4, "RH": 12, "smoke": "high"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-006",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T19:28:37Z",
+    "eventType": "System Restarted",
+    "location": "35.6762°N, 139.6503°E",
+    "sensor": {"temp": 68.9, "RH": 62, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-004",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T07:39:11Z",
+    "eventType": "Geolocation Update",
+    "location": "19.4326°N, 99.1332°W",
+    "sensor": {"temp": 73.4, "RH": 45, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-020",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T13:56:23Z",
+    "eventType": "High Temp Warning",
+    "location": "55.7558°N, 37.6173°E",
+    "sensor": {"temp": 91.3, "RH": 35, "smoke": "low"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-011",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T20:47:02Z",
+    "eventType": "Malfunction",
+    "location": "37.7749°N, 122.4194°W",
+    "sensor": {"temp": 53.6, "RH": 88, "smoke": "none"},
+    "action": "Maintenance Alert",
+    "deviceId": "alarm-017",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T03:28:49Z",
+    "eventType": "Fire Alert",
+    "location": "25.7617°N, 80.1918°W",
+    "sensor": {"temp": 115.7, "RH": 22, "smoke": "high"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-009",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T17:15:36Z",
+    "eventType": "System Restarted",
+    "location": "59.3293°N, 18.0686°E",
+    "sensor": {"temp": 70.5, "RH": 58, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-014",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T01:53:22Z",
+    "eventType": "Geolocation Update",
+    "location": "22.3193°N, 114.1694°E",
+    "sensor": {"temp": 78.2, "RH": 72, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-002",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T10:04:14Z",
+    "eventType": "High Temp Warning",
+    "location": "23.1291°N, 113.2644°E",
+    "sensor": {"temp": 97.8, "RH": 31, "smoke": "none"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-018",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T18:39:51Z",
+    "eventType": "Malfunction",
+    "location": "1.3521°N, 103.8198°E",
+    "sensor": {"temp": null, "RH": 74, "smoke": "low"},
+    "action": "Maintenance Alert",
+    "deviceId": "alarm-007",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T04:21:08Z",
+    "eventType": "Fire Alert",
+    "location": "33.8688°S, 151.2093°E",
+    "sensor": {"temp": 121.9, "RH": 15, "smoke": "high"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-013",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T15:02:35Z",
+    "eventType": "System Restarted",
+    "location": "31.2304°N, 121.4737°E",
+    "sensor": {"temp": 71.6, "RH": 49, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-010",
+    "userResponse": "Pending"
+  },
+  {
+    "timestamp": "2025-03-17T21:36:47Z",
+    "eventType": "Geolocation Update",
+    "location": "45.4215°N, 75.6972°W",
+    "sensor": {"temp": 67.3, "RH": 53, "smoke": "none"},
+    "action": "Logged",
+    "deviceId": "alarm-005",
+    "userResponse": "Acknowledged"
+  },
+  {
+    "timestamp": "2025-03-17T06:48:29Z",
+    "eventType": "High Temp Warning",
+    "location": "12.9716°N, 77.5946°E",
+    "sensor": {"temp": 93.2, "RH": 29, "smoke": "low"},
+    "action": "Alert Sent",
+    "deviceId": "alarm-016",
+    "userResponse": "Pending"
+  }
+]
