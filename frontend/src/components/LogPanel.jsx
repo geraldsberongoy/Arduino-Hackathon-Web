@@ -2,25 +2,23 @@ import React from "react";
 
 const LogPanel = ({ logs, formatDate, getEventTypeColor, getResponseStatusColor }) => {
   return (
-    <div className="flex-1 w-full h-full bg-red-100 rounded-2xl shadow-lg overflow-hidden">
-      {/* Scrollable container with fixed height */}
-      <div className="h-full max-h-full overflow-y-auto">
+      <div className="h-full max-h-full overflow-auto flex-1 w-full bg-red-100 rounded-2xl shadow-lg border-2 border-[#934040]">
         <table className="min-w-full w-full border-collapse">
           {/* Sticky Header */}
-          <thead className="bg-gradient-to-r from-[#F91] via-[#FF6501] to-[#F91] sticky top-0 z-10">
+          <thead className="bg-red-200 sticky top-0 z-10">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Time</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Device ID</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Event Type</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Location</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Sensor Data</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Action</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Response</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Time</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Device ID</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Event Type</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Location</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Sensor Data</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Action</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Response</th>
             </tr>
           </thead>
           
           {/* Table Body with h-full */}
-          <tbody className="h-full bg-[#FFD9DA] divide-y">
+          <tbody className="h-full bg-red-100 divide-y">
             {logs.length > 0 ? (
               logs.map((log, index) => (
                 <tr key={index} className="hover:bg-gray-50 border-y-black">
@@ -69,16 +67,15 @@ const LogPanel = ({ logs, formatDate, getEventTypeColor, getResponseStatusColor 
           </tbody>
 
           {/* Sticky Footer */}
-          <tfoot className="bg-gradient-to-r from-[#F91] via-[#FF6501] to-[#F91] sticky bottom-0 z-10">
+          <tfoot className="bg-red-200 sticky bottom-0 z-10">
             <tr>
-              <td colSpan="7" className="px-6 py-3 text-center text-white font-medium">
+              <td colSpan="7" className="px-6 py-3 text-center text-slate-700 font-medium">
                 Showing {logs.length} logs
               </td>
             </tr>
           </tfoot>
         </table>
       </div>
-    </div>
   );
 };
 

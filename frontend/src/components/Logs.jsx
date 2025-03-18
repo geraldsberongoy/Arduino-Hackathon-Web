@@ -6,7 +6,7 @@ const Logs = () => {
   const [logs, setLogs] = useState([]);
   const [filteredLogs, setFilteredLogs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterType, setFilterType] = useState("All");
+  const [filterType, setFilterType] = useState("Event Type");
   const [filterResponse, setFilterResponse] = useState("All");
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Logs = () => {
     }
     
     // Apply event type filter
-    if (filterType !== "All") {
+    if (filterType !== "Event Type") {
       results = results.filter(log => log.eventType === filterType);
     }
     
@@ -70,18 +70,18 @@ const Logs = () => {
   };
 
   // Get unique event types for filter dropdown
-  const eventTypes = ["All", ...new Set(logs.map(log => log.eventType))];
+  const eventTypes = ["Event Type", ...new Set(logs.map(log => log.eventType))];
 
   return (
-    <div className="flex flex-col w-full h-screen shadow-lg bg-white overflow-hidden p-10 gap-5">
+    <div className="flex flex-col w-full h-screen shadow-lg bg-[#feb1b4] overflow-hidden p-10 gap-5">
       <h1 className="text-5xl font-bold font-['IBM_Plex_Sans'] text-[#30343f]">
         Users
       </h1>
-      <div className=" justify-start text-[#FB4F4F] text-base font-normal font-['IBM_Plex_Sans']">
+      <div className=" justify-start text-[#934040] text-base font-normal font-['IBM_Plex_Sans']">
         Monitor user fire risk statuses and details
       </div>
       {/* Filter Bar */}
-      <div className="flex flex-row items-center justify-between p-4 bg-[#FFD9DA] border-b rounded-2xl shadow-lg">
+      <div className="flex flex-row items-center justify-between p-4 bg-[#FFD9DA] border-[#934040] border-2 rounded-2xl shadow-lg">
         <div className="flex items-center gap-4">
           {/* Search */}
           <div className="relative">
