@@ -73,11 +73,11 @@ const Logs = () => {
   const eventTypes = ["All", ...new Set(logs.map(log => log.eventType))];
 
   return (
-    <div className="flex flex-col w-full h-full bg- shadow-lg bg-[#fdc9c2] overflow-hidden p-10 gap-5">
+    <div className="flex flex-col w-full h-screen shadow-lg bg-white overflow-hidden p-10 gap-5">
       <h1 className="text-5xl font-bold font-['IBM_Plex_Sans'] text-[#30343f]">
         Users
       </h1>
-      <div className=" justify-start text-[#774956] text-base font-normal font-['IBM_Plex_Sans']">
+      <div className=" justify-start text-[#FB4F4F] text-base font-normal font-['IBM_Plex_Sans']">
         Monitor user fire risk statuses and details
       </div>
       {/* Filter Bar */}
