@@ -16,11 +16,11 @@ L.Icon.Default.mergeOptions({
 
 const UserModal = ({ user, onClose }) => {
   return (
-    <div className="fixed inset-0 bg-black/80 bg-opacity-20 flex justify-center items-center z-10">
-      <div className="bg-white py-8 px-12 rounded-2xl shadow-2xl relative w-2/3 flex">
+    <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-10">
+      <div className="bg-white/20 border-1 border-white backdrop-blur-xs p-12 rounded-xl shadow-2xl w-2/3 flex">
         <div className="w-1/2 flex flex-col items-center">
           <button
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 cursor-pointer"
+            className="absolute top-4 right-4 text-white hover:text-slate-700 hover:scale-140 duration-300 cursor-pointer"
             onClick={onClose}
           >
             <X size={24} />
@@ -28,17 +28,17 @@ const UserModal = ({ user, onClose }) => {
           <img
             src={user.avatar}
             alt={`Avatar of ${user.name}`}
-            className="mask mask-squircle h-32 w-32 mb-6 border-4 border-primary"
+            className="h-32 w-32 mb-6 mask mask-squircle "
           />
-          <h2 className="text-3xl font-bold mb-4 text-primary">{user.name}</h2>
-          <p className="text-lg mb-2 text-secondary">
+          <h2 className="text-3xl font-bold mb-4 text-white">{user.name}</h2>
+          <p className="text-lg mb-2 text-white">
             Location: {user.location}
           </p>
-          <p className="text-lg mb-2 text-secondary">
+          <p className="text-lg mb-2 text-white">
             Temperature Level: {user.temperature}°C
           </p>
-          <p className="text-lg mb-2 text-secondary">Status: {user.status}</p>
-          <p className="text-lg text-secondary">
+          <p className="text-lg mb-2 text-white capitalize">Status: {user.status}</p>
+          <p className="text-lg text-white">
             Last Update: {user.lastUpdate}
           </p>
         </div>
@@ -46,7 +46,7 @@ const UserModal = ({ user, onClose }) => {
           <MapContainer
             center={[user.geolocation.latitude, user.geolocation.longitude]}
             zoom={100}
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%", borderRadius: "1rem", border: "100px" }}
           >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
