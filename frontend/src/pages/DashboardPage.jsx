@@ -3,13 +3,14 @@ import Sidebar from "../components/Sidebar";
 import Geolocation from "../components/Geolocation";
 import User from "../components/User";
 import Logs from "../components/Logs";
-import users from "../data/users";
+// import users from "../data/users";
 import AlertModal from "../components/ui/AlertModal";
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 const DashboardPage = () => {
   const [selectedComponent, setSelectedComponent] = useState("geolocation");
+  const [users, setUsers] = useState([]);
 
   const [showAlert, setShowAlert] = useState(false);
   const [criticalUser, setCriticalUser] = useState(null);
@@ -19,6 +20,8 @@ const DashboardPage = () => {
     const unsubscribe = onSnapshot(collection(db, 'user'), (snapshot) => {
       const users = snapshot.docs.map((doc) => doc.data());
       const criticalUser = users.find((user) => user.status === 'critical');
+
+      setUsers(users);
   
       if (criticalUser) {
         setCriticalUser(criticalUser);

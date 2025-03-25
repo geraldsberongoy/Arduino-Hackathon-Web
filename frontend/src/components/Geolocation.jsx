@@ -45,7 +45,7 @@ const Geolocation = ({ users }) => {
             icon={getStatusIcon(user.status)}
           >
             <Popup className="">
-              {user.name} is {user.status}.
+              {user?.username} is {user?.status}.
             </Popup>
           </Marker>
         ))}
