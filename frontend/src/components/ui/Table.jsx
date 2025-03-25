@@ -85,10 +85,10 @@ const Table = ({ users, searchQuery, filter, sortBy }) => {
                     </div>
                   </div>
                 </td>
-                <td>{user.location}</td>
-                <td>{user.temperature}°C</td>
-                <td className="capitalize">{user.status}</td>
-                <td>{user.lastUpdate}</td>
+                <td>{user?.address}</td>
+                <td>{user?.temperature}°C</td>
+                <td className="capitalize">{user?.status}</td>
+                <td>{user?.lastUpdate}</td>
               </tr>
             ))
           )}
