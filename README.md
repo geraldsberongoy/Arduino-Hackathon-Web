@@ -1,39 +1,50 @@
-# Alertech 🚨🔥
+# Alertech Web
 ---
-## Description  
-Alertech is a real-time fire and gas leak detection system utilizing **ESP32** and **Firebase**. By integrating **IoT sensors**, a **mobile app**, and a **web dashboard**, the system ensures **instant alerts** to users and fire stations, even triggering an **automated emergency call** if necessary.
+## Overview
 
-**Website:** [Insert Link Here]
+Alertech is an integrated fire detection and alert system composed of a mobile app, a website, and an IoT device. It enables real-time monitoring of temperature, humidity, and smoke levels, and provides instant alerts to users and fire authorities in case of a fire.
 
-**Mobile:** [Insert Link here]
+
+## Demo
+Deployed Link: https://alertech-firestation-dashboard.vercel.app/
+
+## Related Repositories
+- 🌐 [Alertech Mobile App](https://github.com/DavidBatoDev/alertech-mobile-app) — The web dashboard for fire stations to monitor and respond to emergencies.
+- 🔥 [Alertech FCM API](https://github.com/DavidBatoDev/alertech-fcm-api) — The API for the FCM to send Notifications to all mobile app for users and neighbors to monitor alerts in real-time.
+- ⚙️ [Alertech IoT Device Code](https://github.com/DavidBatoDev/alertech-iot-device) — The ESP32 code for reading sensor data and sending alerts via Firebase.
 
 ---
-## Screenshots
-![Dashboard Preview](insert-image-link-here)
 
+
+## System Overview
+### Mobile App (For Users and Neighbors)
+
+- Monitor home environment (temperature, humidity, smoke) in real time.
+- Receive alerts when a fire is detected nearby.
+- Users without the IoT device can still receive alerts if a neighbor's device detects a fire.
+
+### Website (For Fire Authority)
+
+- Displays geolocation of all users with devices.
+- Provides access to a user database containing contact information and addresses.
+- Allows monitoring of temperature, smoke, and humidity levels in real time.
+- Monitor and respond to fire alerts.
+
+### IoT Device
+
+- Built with ESP32, DHT22 (for temperature and humidity), and MQ-2 (for smoke detection).
+- Detects temperature, humidity, and smoke levels.
+- Sends alerts to both the user and fire station via Firebase Cloud Messaging (FCM).
+- Updates real-time data to Firebase, accessible through mobile and web apps.
 
 ---
-## Tech Stack
 
-### **Embedded Development**
-- **Language:** C/C++
-- **Platform:** Arduino IDE
-- **Data Communication:** HTTP (via Firebase & Alerto PH API)
-### **Frontend**
-- **Web (React, Vite, Tailwind, LeafletJS)**
-    - Web Dashboard (Next.js + Firebase)
-    - Admin Panel for Fire Station Authorities
-    - Real-time Sensor Monitoring
-- **Mobile (Next.js)**
-    - Sensor Dashboard with Live Data
-    - Emergency Call Trigger
-    - Integration with Alerto PH API
+## Technology Stack
 
-### **Cloud & Communication**
-- **Firebase Realtime Database** (Stores sensor data)
-- **Firebase Cloud Functions** (Handles alerts & call triggers)
-- **Twilio/Vonage API** (Automated calls to unresponsive users)
-
+- **Mobile App:** React Native CLI with Firebase integration.
+- **Web App:** React with Firebase for real-time monitoring.
+- **IoT Device:** ESP32 with DHT22 and MQ-2 sensors, integrated with Firebase.
+- **Cloud:** Firebase for authentication, database, and notifications.
 ---
 
 ## Installation & Setup
@@ -57,13 +68,16 @@ npm run dev
 
 ## How It Works
 
-1. **ESP32 Monitors the Environment**
-    - Reads smoke levels and temperature.
-    - Sends data to Firebase in real-time.
-    - Users can trigger emergency calls when critical smoke levels are detected.
-2. **Instant Notifications to Users & Fire Stations**
-    - Mobile app receives alerts via Firebase Cloud Messaging (FCM).
-    - Web dashboard updates instantly.
+### ESP32 Monitors the Environment
+
+- Reads smoke levels and temperature.
+- Sends data to Firebase in real-time.
+
+### Instant Notifications to Users, Neighbors, & Fire Stations
+
+- Mobile app receives alerts via Firebase Cloud Messaging (FCM).
+- Neighbors receive alerts if a nearby device detects danger.
+- Web dashboard updates instantly.
 
 ---
 
