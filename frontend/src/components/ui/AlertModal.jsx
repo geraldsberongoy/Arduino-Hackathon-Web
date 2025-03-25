@@ -16,6 +16,19 @@ const AlertModal = ({ show, onClose, user }) => {
         <p className="text-lg text-gray-700 mb-4">
           <strong>{user.name}</strong> is in a critical status!
         </p>
+        <p className="text-lg text-gray-700">
+          <strong>Temperature:</strong> {user?.temperature}°C
+        </p>
+        <p className="text-lg text-gray-700">
+          <strong>MQ2 Level:</strong> {user?.mq2}
+        </p>
+        <p className="text-lg text-gray-700">
+          Please contact the user immediately to ensure their safety.
+          <strong>{user?.contactNumber}</strong>
+        </p>
+        <p className="text-lg text-gray-700">
+          <strong>Address:</strong> {user?.address}
+        </p>
         <div className="flex items-center justify-center text-red-600/70 mb-5">
           <OctagonAlert size={200} />
         </div>

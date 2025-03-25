@@ -44,7 +44,7 @@ const User = () => {
   return (
     <div className="h-screen w-full flex flex-col px-10 py-5">
       <h1 className="text-5xl font-bold font-['IBM_Plex_Sans'] text-[#30343f]">
-        Users
+        Registered Users with Alertech Device
       </h1>
       <div className="justify-start text-[#fc6791] text-base font-normal font-['IBM_Plex_Sans']">
         Monitor user fire risk statuses and details
