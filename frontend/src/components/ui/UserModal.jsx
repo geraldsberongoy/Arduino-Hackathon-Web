@@ -26,20 +26,26 @@ const UserModal = ({ user, onClose }) => {
             <X size={24} />
           </button>
           <img
-            src={user.avatar}
-            alt={`Avatar of ${user.name}`}
-            className="h-32 w-32 mb-6 mask mask-squircle "
+            src={user?.avatar || "/avatar.png"}
+            alt={`Avatar of ${user?.username}`}
+            className="h-16 w-16 mb-6 mask mask-squircle "
           />
-          <h2 className="text-3xl font-bold mb-4 text-white">{user.name}</h2>
-          <p className="text-lg mb-2 text-white">
-            Location: {user.location}
+          <h2 className="text-3xl font-bold mb-4 text-white">{user?.username}</h2>
+          <p className="text-lg mb-2 text-white text-truncate max-w-[300px]">
+            Location: {user?.address}
+          </p>
+          <p className="text-lg mb-2 text-white text-truncate max-w-[300px]">
+            Contact Number: {user?.contactNumber}
           </p>
           <p className="text-lg mb-2 text-white">
-            Temperature Level: {user.temperature}°C
+            Temperature Level: {user?.temperature}°C
+          </p>
+          <p className="text-lg mb-2 text-white">
+            MQ2 Level: {user?.mq2}
           </p>
           <p className="text-lg mb-2 text-white capitalize">Status: {user.status}</p>
           <p className="text-lg text-white">
-            Last Update: {user.lastUpdate}
+            Last Update: {user?.lastUpdate}
           </p>
         </div>
         <div className="w-1/2">

@@ -6,7 +6,7 @@ const Table = ({ users, searchQuery, filter, sortBy }) => {
 
   const filteredUsers = users
     .filter((user) => {
-      const matchesSearchQuery = user.name
+      const matchesSearchQuery = user?.username
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
       const matchesFilter =
@@ -77,7 +77,7 @@ const Table = ({ users, searchQuery, filter, sortBy }) => {
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle h-12 w-12">
-                        <img src={user.avatar} alt={`Avatar of ${user.name}`} />
+                        <img src={user.avatar || '/avatar.png'} alt={`Avatar of ${user.name}`} className="w-16 h-16" />
                       </div>
                     </div>
                     <div>

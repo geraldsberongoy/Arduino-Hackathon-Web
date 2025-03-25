@@ -5,6 +5,8 @@ import User from "../components/User";
 import Logs from "../components/Logs";
 import users from "../data/users";
 import AlertModal from "../components/ui/AlertModal";
+import { onSnapshot, collection } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 const DashboardPage = () => {
   const [selectedComponent, setSelectedComponent] = useState("geolocation");
@@ -14,14 +16,20 @@ const DashboardPage = () => {
   const [audio] = useState(new Audio("/alert.mp3"));
 
   useEffect(() => {
-    const user = users.find((user) => user.status === "critical");
-    if (user) {
-      setCriticalUser(user);
-      setShowAlert(true);
-      audio.loop = true;
-      audio.play();
-    }
-  }, [users]);
+    const unsubscribe = onSnapshot(collection(db, 'user'), (snapshot) => {
+      const users = snapshot.docs.map((doc) => doc.data());
+      const criticalUser = users.find((user) => user.status === 'critical');
+  
+      if (criticalUser) {
+        setCriticalUser(criticalUser);
+        setShowAlert(true);
+        audio.loop = true;
+        audio.play();
+      }
+    });
+  
+    return () => unsubscribe();
+  }, []);
 
   const handleCloseAlert = () => {
     setShowAlert(false);
