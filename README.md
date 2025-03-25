@@ -9,7 +9,7 @@ Alertech is an integrated fire detection and alert system composed of a mobile a
 Deployed Link: https://alertech-firestation-dashboard.vercel.app/
 
 ## Related Repositories
-- 🌐 [Alertech Mobile App](https://github.com/DavidBatoDev/alertech-mobile-app) — The web dashboard for fire stations to monitor and respond to emergencies.
+- 🌐 [Alertech Mobile App](https://github.com/DavidBatoDev/alertech-mobile-app) — The wmobile app for the user an neigbors to monitor and respond to emergencies.
 - 🔥 [Alertech FCM API](https://github.com/DavidBatoDev/alertech-fcm-api) — The API for the FCM to send Notifications to all mobile app for users and neighbors to monitor alerts in real-time.
 - ⚙️ [Alertech IoT Device Code](https://github.com/DavidBatoDev/alertech-iot-device) — The ESP32 code for reading sensor data and sending alerts via Firebase.
 
